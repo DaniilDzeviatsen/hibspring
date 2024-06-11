@@ -32,18 +32,6 @@ public class UserDaoImp implements UserDao {
         return query.getResultList();
     }
 
-    @Override
-    public List<User> getUserByCarModelAndSeries(int series, String model) {
-        TypedQuery<Car> query = sessionFactory.getCurrentSession().createQuery("from Car where series=:series and model=:model");
-        query.setParameter("series", series);
-        query.setParameter("model", model);
-        Car car = query.getSingleResult();
-        long userId = car.getUser().getId();
-        TypedQuery<User> userQuery = sessionFactory.getCurrentSession().createQuery("from User where id=:userId");
-        userQuery.setParameter("userId", userId);
-        return userQuery.getResultList();
-    }
-
     //В этом методе получаю список юзеров у которых определенная марка авто (марка может быть у нескольких юзеров, поэтому список)
     @Override
     public List<User> getUserByCarModel(String model) {

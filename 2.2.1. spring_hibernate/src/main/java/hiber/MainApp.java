@@ -32,7 +32,6 @@ public class MainApp {
         userService.add(user2);
         userService.add(user3);
         userService.add(user4);
-        System.out.println(userService.getUserByCarModelAndSeries(2, "bmw"));
         System.out.println(userService.getUserByCarModel("ford"));
         List<User> users = userService.listUsers();
         System.out.println(userService.getUserByCarSeries(2));
