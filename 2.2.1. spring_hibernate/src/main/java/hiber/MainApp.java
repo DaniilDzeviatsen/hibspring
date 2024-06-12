@@ -32,9 +32,9 @@ public class MainApp {
         userService.add(user2);
         userService.add(user3);
         userService.add(user4);
-        System.out.println(userService.getUserByCarModel("ford"));
+
         List<User> users = userService.listUsers();
-        System.out.println(userService.getUserByCarSeries(2));
+        System.out.println(userService.getUserByCarModelAndSeries(2, "bmw"));
         for (User user : users) {
             System.out.println("Id = " + user.getId());
             System.out.println("First Name = " + user.getFirstName());
